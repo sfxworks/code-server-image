@@ -1,5 +1,6 @@
 # Use build argument to specify target architecture (default to amd64)
 ARG TARGETARCH=amd64
+ENV TARGETARCH=${TARGETARCH}
 
 FROM codercom/code-server
 
@@ -17,6 +18,6 @@ RUN echo "Target architecture: $TARGETARCH" && \
 
 # Install buildkitd for the target architecture
 RUN BUILDKIT_VERSION="v0.11.6" && \
-    curl -LO "https://github.com/moby/buildkit/releases/download/$BUILDKIT_VERSION/buildkit-$BUILDKIT_VERSION.linux-${{TARGETARCH}}.tar.gz" && \
+    curl -LO "https://github.com/moby/buildkit/releases/download/$BUILDKIT_VERSION/buildkit-$BUILDKIT_VERSION.linux-$TARGETARCH.tar.gz" && \
     tar -xvf buildkit-$BUILDKIT_VERSION.linux-$TARGETARCH.tar.gz && \
     sudo mv bin/* /usr/local/bin/
