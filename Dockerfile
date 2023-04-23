@@ -1,8 +1,6 @@
-# Use build argument to specify target architecture (default to amd64)
-ARG TARGETARCH=amd64
-ENV TARGETARCH=${TARGETARCH}
-
 FROM codercom/code-server
+
+ARG TARGETARCH=amd64
 
 # Install dependencies
 RUN sudo apt-get update -y && sudo apt-get install rsync hugo curl wget -y
