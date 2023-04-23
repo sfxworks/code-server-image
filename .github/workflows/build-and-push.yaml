@@ -1,6 +1,10 @@
 name: Build and Push Docker Image
 
 on:
+  # Scheduled trigger to run the job daily at 12:00 PM UTC
+  schedule:
+    - cron: '0 12 * * *'
+  # Trigger the workflow on push events to the main branch
   push:
     branches:
       - main
