@@ -19,3 +19,6 @@ RUN BUILDKIT_VERSION="v0.11.6" && \
     curl -LO "https://github.com/moby/buildkit/releases/download/$BUILDKIT_VERSION/buildkit-$BUILDKIT_VERSION.linux-$TARGETARCH.tar.gz" && \
     tar -xvf buildkit-$BUILDKIT_VERSION.linux-$TARGETARCH.tar.gz && \
     sudo mv bin/* /usr/local/bin/
+
+# Install helm
+RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
