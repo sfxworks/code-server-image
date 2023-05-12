@@ -3,7 +3,7 @@ FROM codercom/code-server
 ARG TARGETARCH=amd64
 
 # Install dependencies
-RUN sudo apt-get update -y && sudo apt-get install rsync hugo curl wget gpg pip -y
+RUN sudo apt-get update -y && sudo apt-get install rsync hugo curl wget gpg pip s3cmd -y
 
 # Install kubectl for the target architecture
 RUN echo "Target architecture: $TARGETARCH" && \
