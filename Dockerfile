@@ -26,4 +26,4 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash - &&\
 
 
 # Install helm
-RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bas
+RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
