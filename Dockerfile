@@ -21,8 +21,8 @@ RUN BUILDKIT_VERSION="v0.11.6" && \
     sudo mv bin/* /usr/local/bin/
 
 # Install nodejs and npm
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
-    apt-get install -y nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash - &&\
+    sudo apt-get install -y nodejs
 
 
 # Install helm
