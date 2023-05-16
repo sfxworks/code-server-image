@@ -20,5 +20,10 @@ RUN BUILDKIT_VERSION="v0.11.6" && \
     tar -xvf buildkit-$BUILDKIT_VERSION.linux-$TARGETARCH.tar.gz && \
     sudo mv bin/* /usr/local/bin/
 
+# Install nodejs and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+    apt-get install -y nodejs
+
+
 # Install helm
-RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bas
