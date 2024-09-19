@@ -24,6 +24,9 @@ RUN BUILDKIT_VERSION="v0.11.6" && \
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash - &&\
     sudo apt-get install -y nodejs
 
+RUN curl -LO https://github.com/sozercan/kubectl-ai/releases/download/v0.0.13/kubectl-ai_linux_amd64.tar.gz && \
+    tar -xvf kubectl-ai_linux_amd64.tar.gz && \
+    sudo mv kubectl-ai /usr/local/bin/
 
 # Install helm
 RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
